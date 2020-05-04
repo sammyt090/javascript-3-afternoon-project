@@ -50,7 +50,41 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+
+
+
+function employeeUpdater () {
+  for(let i=0; i < employees.length; i++){
+    let frstName = employees[i].firstName
+    
+      if(frstName === "Theo"){
+        employees.splice(i,1)
+        i = i-1
+      }
+        if (frstName === "Lorie"){
+          employees[i].department = "HR"
+        }
+    
+
+  }
+  return employees
+}
+
+// const employeeUpdater (){
+//   const employeeSearch = employees.filter(element,index => {
+//     return element
+//       if (element[0,0]=== "Theo"){
+//         delete employees[0,0]
+//       }
+//       if (element[0,0] === "Lorie"){
+
+//       }
+
+//   }
+//     )
+
+
+// }
 
 
 
@@ -68,8 +102,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
-
+function removeDuplicates(arr, num, cb){
+  for( let i = 0; i < arr.length; i++){
+    for( let j = arr.length -1; j > i; j-- ){
+      if(arr[i] === arr[j]){
+        arr.splice(j,1)
+      }
+    }
+  }
+  return arr
+}
+removeDuplicates(workplaceAccidents)
 
 
 ////////// PROBLEM 3 //////////
@@ -97,10 +140,17 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name
+
+//cat.catFriends.activities.splice(1,1,grumpyActivity)
 
 
+// for(let key in catFriends){
+//   if(key.includes("eat food")){
+//     catFriends()
+//   }
+// }
 
 ////////// PROBLEM 4 //////////
 
@@ -138,7 +188,14 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  myCar.accidents.forEach(function(element ){
+          if(element.atFaultForAccident === true){
+            element.atFaultForAccident = false
+          }
+  })
+  return recordCleaner
+}
 
 
 
@@ -148,6 +205,8 @@ var myCar = {
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
+
+
 /*
   Above is an array of arrays. Use two for loops.
     1. Write a function called 'looper'. 
@@ -156,7 +215,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
-
-//Code Here
-
+const looper = () =>{
+  for( let i = 0; i < numsArr.length; i++){
+    for( let j = 0;  j < numsArr[i].length; j++ ){
+      if(numsArr[i][j] % 2 === 0 ){
+        numsArr[i][j] = 'even'
+      }else if (numsArr[i][j] % 2 != 0){
+      numsArr[i][j]= 'odd'
+      }
+    }
+  }
+  return numsArr
+}
 
